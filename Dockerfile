@@ -1,8 +1,9 @@
 FROM keyboardscience/ruby-base:0.1
 
+RUN apt-get update
 RUN apt-get install -qy libpq-dev
 RUN useradd -r -s /bin/false rails
-RUN git clone https://$AUTH_TOKEN:x-oauth-basic@github.com/keyboardscience/statuspage.git /app
+RUN git clone https://github.com/keyboardscience/statuspage.git /app
 
 CMD if [ -z $BRANCH ]; then BRANCH=master; fi; \
     cd /app \
