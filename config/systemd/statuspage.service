@@ -1,0 +1,14 @@
+[Unit]
+Description=Rails Sample Application -- aka StatusPage
+Documentation=https://github.com/keyboardscience/statuspage/README.md
+After=network.target auditd.service
+
+[Service]
+ExecStart=/app/bin/unicorn -c /app/config/unicorn/production.rb -E production -D
+ExecReload=/bin/kill -SIGUSR1 $MAINPID
+KillMode=process
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+Alias=dockerized.service

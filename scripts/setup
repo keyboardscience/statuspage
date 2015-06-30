@@ -1,4 +1,5 @@
 #!/bin/bash
 
-bundle install
-bundle exec rake assets:precompile
+cd /app
+bundler install
+bundler exec rake assets:precompile

@@ -1,0 +1,17 @@
+{
+  "id": "sample",
+  "cpus": 0.2,
+  "mem": 20.0,
+  "instances": 3,
+  "constraints": [["hostname", "UNIQUE", ""]],
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "keyboardscience/rails-sample:0.1",
+      "network": "BRIDGE",
+      "portMappings": [
+        { "containerPort": 8080, "hostPort": 0, "servicePort": 0, "protocol": "tcp" }
+      ]
+    }
+  }
+}

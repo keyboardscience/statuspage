@@ -1,0 +1,12 @@
+[Unit]
+Description=Sample Rails Application server socket
+Before=dockerized.service
+Conflicts=dockerized.service
+ConditionPathExists=!/dockerized.override
+
+[Socket]
+ListenStream=8080
+Accept=yes
+
+[Install]
+WantedBy=sockets.target
