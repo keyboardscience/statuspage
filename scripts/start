@@ -3,4 +3,4 @@
 if [ -z $ENVIRONMENT ]; then ENVIRONMENT=staging; fi
 
 bundler install
-bundler exec unicorn -C /app/config/unicorn/$ENVIRONMENT.rb -E $ENVIRONMENT -D
+bundler exec unicorn -c /app/config/unicorn/$ENVIRONMENT.rb -E $ENVIRONMENT -D
