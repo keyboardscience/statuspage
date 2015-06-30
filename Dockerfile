@@ -1,10 +1,3 @@
-#!/bin/bash
-
-if [ -z $ENVIRONMENT ]; then ENVIRONMENT=staging; fi
-
-bundler install
-bundler exec unicorn -C /app/config/unicorn/$ENVIRONMENT.rb -E $ENVIRONMENT -D
-vagrant@dropship1:/tmp/statuspage$ cat Dockerfile
 FROM keyboardscience/ruby-base:0.1
 MAINTAINER Kevin Phillips <kevin.phillips@omadahealth.com>
 
