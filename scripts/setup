@@ -1,5 +1,5 @@
 #!/bin/bash
 
 cd /app
-bundler install
-bundler exec rake assets:precompile
+/usr/bin/bundler install --binstubs /app/bin --path /app/tmp/bundle --without development test --deployment
+/usr/bin/bundler exec rake assets:precompile

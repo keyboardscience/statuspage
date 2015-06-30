@@ -13,6 +13,7 @@ RUN if [ -z $BRANCH ]; then BRANCH=master; fi; \
     && git checkout $BRANCH \
     && git pull
 
+RUN mkdir -p /app/tmp/pids
 RUN chown -R rails /app
 RUN chmod a+x /app/scripts/start
 RUN apt-get autoremove -y && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
